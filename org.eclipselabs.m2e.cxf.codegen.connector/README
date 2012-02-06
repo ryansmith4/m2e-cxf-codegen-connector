@@ -14,4 +14,4 @@ You may need to delete the org.eclipselabs.m2e.cxf.codegen.connector.tests proje
 
 Because of an m2e bug (https://issues.sonatype.org/browse/MNGECLIPSE-966), you may need to set the JRE for org.eclipselabs.m2e.cxf.codegen.connector and org.eclipselabs.m2e.cxf.codegen.connector.tests to 1.6.
 
-This plug-in can also be installed from the following update site: http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg/update-site/
+This plug-in can also be installed from the following update site: http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg.update/

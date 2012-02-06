@@ -18,8 +18,8 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg/update-site/"/>
-      <discovery label="%updateSiteName" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg/update-site/"/>
+      <update label="%updateSiteName" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg.update/"/>
+      <discovery label="%updateSiteName" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg.update/"/>
    </url>
    
    <requires>

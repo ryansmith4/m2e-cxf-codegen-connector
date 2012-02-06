@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="org.eclipselabs.m2e.cxf.codegen.connector Update Site" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg/update-site/">
+   <description name="org.eclipselabs.m2e.cxf.codegen.connector Update Site" url="http://m2e-cxf-codegen-connector.eclipselabs.org.codespot.com/hg.update/">
       org.eclipselabs.m2e.cxf.codegen.connector Update Site
    </description>
    <feature url="features/org.eclipselabs.m2e.cxf.codegen.connector.feature_1.0.0.qualifier.jar" id="org.eclipselabs.m2e.cxf.codegen.connector.feature" version="1.0.0.qualifier">
