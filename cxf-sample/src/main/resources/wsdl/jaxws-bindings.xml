@@ -1,0 +1,7 @@
+<jaxws:bindings wsdlLocation="HelloService.wsdl"  version="2.0"
+    xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+ 
+    <jaxws:bindings>
+    </jaxws:bindings>
+ 
+</jaxws:bindings>

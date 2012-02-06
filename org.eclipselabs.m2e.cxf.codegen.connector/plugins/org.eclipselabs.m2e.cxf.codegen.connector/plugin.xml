@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2e.core.lifecycleMappingMetadataSource">
+   </extension>
+   <extension
+         point="org.eclipse.m2e.core.projectConfigurators">
+      <configurator
+            class="org.eclipselabs.m2e.cxf.codegen.connector.CxfWsdl2JavaProjectConfigurator"
+            id="org.eclipselabs.m2e.cxf.codegen.connector.CxfWsdl2JavaProjectConfigurator"
+            name="Cxf Wsdl2Java Connector Configurator">
+      </configurator>
+   </extension>
+
+</plugin>
