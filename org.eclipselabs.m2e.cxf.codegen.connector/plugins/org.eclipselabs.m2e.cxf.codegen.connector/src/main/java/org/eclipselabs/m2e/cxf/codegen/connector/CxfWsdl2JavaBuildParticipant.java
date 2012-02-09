@@ -4,9 +4,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Set;
-  
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.MojoExecution;
 import org.codehaus.plexus.util.Scanner;
@@ -24,8 +22,8 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
     {
         super( execution, true );
     }
-  
-    @Override
+
+	@Override
     public Set<IProject> build( int kind, IProgressMonitor monitor ) throws Exception
     {
   
@@ -59,8 +57,7 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
   
                 String wsdl = getWsdl.invoke( obj ).toString();
   
-                filesModified = ( !StringUtils.isEmpty( wsdl ) && !ArrayUtils
-                                .isEmpty( getModifiedFiles( buildContext, new File( wsdl ) ) ) );
+                filesModified = ( !isEmpty( wsdl ) && !isEmpty( getModifiedFiles( buildContext, new File( wsdl ) ) ) );
   
                 if ( !filesModified )
                 {
@@ -68,9 +65,8 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
   
                     for ( String bindingFile : bindingFiles )
                     {
-                        filesModified = ( !StringUtils.isEmpty( bindingFile ) && !ArrayUtils
-                                        .isEmpty( getModifiedFiles( buildContext,
-                                                                    new File( bindingFile ) ) ) );
+                        filesModified = ( !isEmpty( bindingFile ) &&
+                                          !isEmpty( getModifiedFiles( buildContext, new File( bindingFile ) ) ) );
   
                         if ( filesModified )
                         {
@@ -101,7 +97,16 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
   
         return result;
     }
+	
+	public static <T> boolean isEmpty( final T[] array )
+	{
+		return array == null || array.length == 0;
+	}
    
+	public static boolean isEmpty(String str) {
+        return (str == null || str.length() == 0);
+    }
+	
     public static String[] getModifiedFiles( BuildContext buildContext, File source )
         throws Exception
     {

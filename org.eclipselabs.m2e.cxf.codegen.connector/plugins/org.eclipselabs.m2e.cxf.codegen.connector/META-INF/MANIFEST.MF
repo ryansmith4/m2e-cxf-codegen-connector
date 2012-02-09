@@ -11,7 +11,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.7.100",
  org.eclipse.m2e.core;bundle-version="1.0.0",
  org.eclipse.m2e.maven.runtime;bundle-version="1.0.0",
- org.apache.commons.lang;bundle-version="2.1.0",
  org.eclipse.m2e.jdt;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
