@@ -9,6 +9,7 @@ import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.MojoExecution;
 import org.codehaus.plexus.util.Scanner;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.m2e.core.MavenPlugin;
 import org.eclipse.m2e.core.embedder.IMaven;
@@ -37,7 +38,8 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
   
         boolean filesModified = false;
   
-        if ( sourceRoot != null && !sourceRoot.exists() )
+        if ( sourceRoot != null && ( !sourceRoot.exists() || 
+        		IncrementalProjectBuilder.CLEAN_BUILD == kind || IncrementalProjectBuilder.FULL_BUILD == kind ) )
         {
             filesModified = true;
         }
@@ -47,8 +49,7 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
             final List<?> wsdlOptions = maven.getMojoParameterValue( mavenSession, mojoExecution,
                                                                   "wsdlOptions", List.class );
   
-            // getMojoParameterValue returns an instance of WsdlOption from a different
-            // classloader, so casting doesn't work.
+            // getMojoParameterValue returns an instance of WsdlOption from a different classloader, so casting doesn't work.
             for ( Object obj : wsdlOptions )
             {
                 Class<? extends Object> k = obj.getClass();
