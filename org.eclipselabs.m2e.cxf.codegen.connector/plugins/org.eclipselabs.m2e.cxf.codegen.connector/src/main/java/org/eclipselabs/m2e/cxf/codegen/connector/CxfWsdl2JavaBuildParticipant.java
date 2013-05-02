@@ -62,9 +62,22 @@ public class CxfWsdl2JavaBuildParticipant extends MojoExecutionBuildParticipant
   
                 if ( !filesModified )
                 {
-                    String[] bindingFiles = (String[])getBindingFiles.invoke( obj );
-  
-                    for ( String bindingFile : bindingFiles )
+                	String[] bindingFiles = null;
+                	Object param = getBindingFiles.invoke( obj );
+                	
+                	// CXF 2.5.10+ use HashSet to store bindingFiles attribute
+                	if (param instanceof Set)
+                	{
+                		@SuppressWarnings("unchecked")
+						Set<String> bindingFilesSet = (Set<String>)param;
+                		bindingFiles = bindingFilesSet.toArray(new String[bindingFilesSet.size()]);
+                	}
+                	else
+                	{
+                		bindingFiles = (String[]) param;
+                	}
+
+                	for ( String bindingFile : bindingFiles )
                     {
                         filesModified = ( !isEmpty( bindingFile ) &&
                                           !isEmpty( getModifiedFiles( buildContext, new File( bindingFile ) ) ) );
